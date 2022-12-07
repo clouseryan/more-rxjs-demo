@@ -1,0 +1,22 @@
+<h1>Pick Two Pokemon For Battle</h1>
+
+<div class="battle-container" *ngIf="!battleTime">
+  <ng-container *ngFor="let pokemon of battlePokemon$ | async">
+    <app-poke-card *ngIf="!!pokemon" [pokemon]="pokemon"></app-poke-card>
+  </ng-container>
+  <button *ngIf="(battlePokemon$ | async)" mat-raised-button color="primary" (click)="beginBattle()">Start Battle
+  </button>
+</div>
+
+<mat-divider></mat-divider>
+
+<div class="poke-container" *ngIf="!battleTime && (pokemon$ | async)">
+  <app-poke-card *ngFor="let pokemon of pokemon$ | async"
+                 [pokemon]="pokemon"
+                 (click)="addPokemon(pokemon)"></app-poke-card>
+</div>
+
+<div *ngIf="battleTime">
+  <app-battle [pokemon]="battlePokemon$ | async"
+              [replacePoke$]="replacePokemon$"></app-battle>
+</div>

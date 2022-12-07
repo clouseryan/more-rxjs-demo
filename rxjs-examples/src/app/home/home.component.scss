@@ -1,0 +1,12 @@
+.poke-container, .battle-container {
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  app-poke-card {
+    margin: 10px;
+    max-width: 250px;
+    cursor: pointer;
+  }
+}

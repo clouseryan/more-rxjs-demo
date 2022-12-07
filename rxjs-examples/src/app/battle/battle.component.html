@@ -1,0 +1,26 @@
+<div class="arena" *ngIf="battle$ | async as b">
+  <div class="pokemon">
+    <div class="pokemon-a">
+      <app-poke-card [pokemon]="b.pokemon1"
+                     (damage)="attack(b.pokemon1)"
+                     [showActions]="true"
+                     (change)="change('poke1', $event)"></app-poke-card>
+    </div>
+
+    <div class="pokemon-b">
+      <app-poke-card [pokemon]="b.pokemon2"
+                     (damage)="attack(b.pokemon2)"
+                     [showActions]="true"
+                     (change)="change('poke2', $event)"></app-poke-card>
+    </div>
+  </div>
+
+  <strong>Battle Stats</strong>
+  <span>{{ b.pokemon1.name.english }}:  {{ b.pokemon1Hp }}</span>
+  <span>{{ b.pokemon2.name.english }}:  {{ b.pokemon2Hp }}</span>
+
+  <span *ngFor="let log of b.actions">
+      {{ log }}
+    </span>
+
+</div>

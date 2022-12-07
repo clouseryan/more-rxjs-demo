@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-title>{{ pokemon.name.english }}</mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item>
+        <h4 matLine>Types</h4>
+        <p matLine>
+          <span *ngFor="let type of pokemon.type">
+            <mat-chip>{{ type }}</mat-chip>
+          </span>
+        </p>
+      </mat-list-item>
+      <mat-list-item>
+        <h4 matLine>Stats</h4>
+        <p matLine>
+          <mat-chip>Attack: {{ pokemon.base.Attack }}</mat-chip>
+          <mat-chip>Defense: {{ pokemon.base.Defense }}</mat-chip>
+          <mat-chip>Speed: {{ pokemon.base.Speed }}</mat-chip>
+<!--          <mat-chip>Special Attack: {{ pokemon.base.SPAttack }}</mat-chip>-->
+<!--          <mat-chip>Special Defense: {{ pokemon.base.SPDefences }}</mat-chip>-->
+        </p>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <mat-card-actions *ngIf="showActions">
+    <button mat-raised-button type="button" (click)="doDamage()">Do Damage</button>
+    <button mat-raised-button type="button" (click)="changeMe()">Swap</button>
+  </mat-card-actions>
+</mat-card>

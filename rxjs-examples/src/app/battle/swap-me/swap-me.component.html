@@ -1,0 +1,13 @@
+<div mat-dialog-title>Select a New Pokemon</div>
+<div mat-dialog-content>
+  <mat-list>
+    <mat-list-item *ngFor="let p of pokemon" style="cursor: pointer" (click)="select(p)">
+      {{ p.name.english }}
+    </mat-list-item>
+  </mat-list>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button>Cancel</button>
+  <button mat-button>Ok</button>
+</div>
