@@ -43,8 +43,9 @@ export class HomeComponent {
 
     this.pokeService.getPokemon().subscribe(this._pokemon);
     this.battlePokemon$ = this.pokemonforBattle.pipe(
-      pairwise(),
-      map(x => x.reverse() as [ IPokemon, IPokemon ])
+      mergeScan((acc, val, index) => {
+        return of([ val, acc[0] ]);
+      }, {} as [ IPokemon, IPokemon ])
     );
   }
 

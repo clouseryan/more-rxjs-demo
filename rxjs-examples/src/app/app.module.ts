@@ -22,6 +22,7 @@ import { BattleComponent } from './battle/battle.component';
 import { NgEventBus } from 'ng-event-bus';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SwapMeComponent } from './battle/swap-me/swap-me.component';
+import { BattleDisplayComponent } from './battle/battle-display/battle-display.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SwapMeComponent } from './battle/swap-me/swap-me.component';
     PokeCardComponent,
     HomeComponent,
     BattleComponent,
-    SwapMeComponent
+    SwapMeComponent,
+    BattleDisplayComponent
   ],
   imports: [
     BrowserModule,

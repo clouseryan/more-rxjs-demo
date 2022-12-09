@@ -1,0 +1,9 @@
+<div class="battle-stats-wrapper" *ngIf="battle">
+  <span>{{ battle.pokemon1.name.english }}:  {{ battle.pokemon1Hp }}</span>
+  <span>{{ battle.pokemon2.name.english }}:  {{ battle.pokemon2Hp }}</span>
+
+  <span *ngFor="let log of battle.actions">
+      {{ log }}
+</span>
+
+</div>
